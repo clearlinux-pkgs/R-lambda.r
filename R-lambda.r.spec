@@ -4,7 +4,7 @@
 #
 Name     : R-lambda.r
 Version  : 1.2.3
-Release  : 18
+Release  : 19
 URL      : https://cran.r-project.org/src/contrib/lambda.r_1.2.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lambda.r_1.2.3.tar.gz
 Summary  : Modeling Data with Functional Programming
