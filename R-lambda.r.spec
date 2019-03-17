@@ -4,15 +4,14 @@
 #
 Name     : R-lambda.r
 Version  : 1.2.3
-Release  : 21
+Release  : 22
 URL      : https://cran.r-project.org/src/contrib/lambda.r_1.2.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lambda.r_1.2.3.tar.gz
 Summary  : Modeling Data with Functional Programming
 Group    : Development/Tools
 License  : LGPL-3.0
-Requires: R-formatR
 BuildRequires : R-formatR
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
 No detailed description available
@@ -25,11 +24,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1532403793
+export SOURCE_DATE_EPOCH=1552792732
 
 %install
+export SOURCE_DATE_EPOCH=1552792732
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1532403793
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -64,8 +63,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library lambda.r|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  lambda.r || :
 
 
 %files
@@ -89,3 +87,33 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/lambda.r/help/paths.rds
 /usr/lib64/R/library/lambda.r/html/00Index.html
 /usr/lib64/R/library/lambda.r/html/R.css
+/usr/lib64/R/library/lambda.r/tests/test-all.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-auto_replace.1.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-auto_replace.2.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-auto_replace.3.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-dispatching.1.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-ellipsis_arguments.1.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-ellipsis_arguments.2.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-examples.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-factorial.1.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-factorial.2.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-fill_args.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-function_args.1.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-function_type.1.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-heaviside_step.1.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-heaviside_step.2.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-infix.1.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-optional_arguments.1.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-optional_arguments.2.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-parse_transforms.1.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-parse_transforms.2.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-parse_transforms.3.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-pattern_matching.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-taylor_series.1.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-type_any_type.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-type_ellipsis.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-type_functions.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-type_inheritance.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-type_integer_inheritance.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-type_variable.1.R
+/usr/lib64/R/library/lambda.r/tests/testit/test-types.1.R
